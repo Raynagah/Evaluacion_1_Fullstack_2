@@ -52,6 +52,7 @@ function cargarDatosAlmacenados() {
     }
     
     // Cargar usuarios
+    // Los RUTs deben ser válidos, de lo contrario no dejará guardarlos ni editarlos, ojito con eso o.O
     const usuariosAlmacenados = localStorage.getItem(CLAVE_USUARIOS);
     if (usuariosAlmacenados) {
         listaUsuarios = JSON.parse(usuariosAlmacenados);
@@ -576,7 +577,7 @@ function configurarEventListeners() {
             }
         });
         
-        // Validar RUN en tiempo real
+        // Validar RUT en tiempo real
         if (runInput) {
             runInput.addEventListener('blur', function() {
                 if (this.value && !validarRun(this.value)) {
@@ -650,3 +651,5 @@ window.cargarComunas = cargarComunas;
 
 // Inicializar la aplicación cuando el DOM esté cargado
 document.addEventListener('DOMContentLoaded', inicializarAplicacion);
+
+// Por favor no te caigaasssssssssssssssssssssssssssssss D:
