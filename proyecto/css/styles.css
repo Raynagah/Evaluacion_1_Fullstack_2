@@ -1,5 +1,5 @@
 :root {
-    --color-purple: #201a22;
+    --color-purple: #34495e;;
     --color-light-purple: #8a4dad;
     --color-lighter-purple: #f1f0f6;
 }
@@ -61,4 +61,15 @@
 
 .was-validated .form-control:invalid {
     border-color: #dc3545;
+}
+
+/* Estilos para el video de perfume */
+.videoPolo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    padding-top: 20px;
+    height: auto;
 }
