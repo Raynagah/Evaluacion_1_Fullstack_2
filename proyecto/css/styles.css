@@ -68,8 +68,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 35%;
     margin: auto;
     padding-top: 20px;
     height: auto;
+}
+
+/* Modificaciones a la barra de Navegación o.O */
+.itemNavbarInicio{
+    margin-right: 40px;
 }
