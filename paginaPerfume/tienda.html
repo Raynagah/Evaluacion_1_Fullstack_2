@@ -19,11 +19,10 @@
   </header>
 
   <main class="contenedor">
-    <!-- FILTROS -->
     <aside class="filtros">
-      <h3>Filtrar por precio</h3>
+      <h3 style="text-align: center;">Filtros</h3>
       <label>Desde <input type="number" id="precio-min" placeholder="0"></label>
-      <label>Hasta <input type="number" id="precio-max" placeholder="100000"></label>
+      <label>Hasta <input type="number" id="precio-max" placeholder="500000"></label>
       <button onclick="aplicarFiltros()">Aplicar</button>
       <button onclick="limpiarFiltros()">Limpiar</button>
 
@@ -32,11 +31,12 @@
       <label><input type="checkbox" class="filtro-marca" value="Dior"> Dior</label>
       <label><input type="checkbox" class="filtro-marca" value="Creed"> Creed</label>
       <label><input type="checkbox" class="filtro-marca" value="Chanel"> Chanel</label>
-      <label><input type="checkbox" class="filtro-marca" value="Paco Rabanne"> Paco Rabanne</label>
+      <label><input type="checkbox" class="filtro-marca" value="Rabanne"> Rabanne</label>
       <label><input type="checkbox" class="filtro-marca" value="Carolina Herrera"> Carolina Herrera</label>
       <label><input type="checkbox" class="filtro-marca" value="Versace"> Versace</label>
       <label><input type="checkbox" class="filtro-marca" value="Lancome"> Lancome</label>
       <label><input type="checkbox" class="filtro-marca" value="Tom Ford"> Tom Ford</label>
+      <label><input type="checkbox" class="filtro-marca" value="Burberry"> Burberry</label>
       <label><input type="checkbox" class="filtro-marca" value="Yves Saint Laurent"> Yves Saint Laurent</label>
       <label><input type="checkbox" class="filtro-marca" value="Valentino"> Valentino</label>
 
@@ -49,135 +49,119 @@
     </aside>
 
 
-    <!-- CATÁLOGO -->
     <section class="catalogo">
       <h2>Nuestros Perfumes</h2>
       <div class="grid-productos" id="lista-productos">
 
-        <!-- Producto de ejemplo -->
-        <div class="grid-productos" id="lista-productos">
-
-          <!-- Producto 1 -->
-          <div class="producto" data-marca="Armaf" data-genero="Hombre" data-precio="30943">
-            <span class="descuento">-31%</span>
-            <img src="img/Le Parfait Pour Homme Armaf.webp" alt="Perfume 1">
-            <h4>Le Parfait Pour Homme Armaf 200 ML (H)</h4>
-            <p class="precio-normal">$41.900</p>
-            <p class="precio-internet">$30.943</p>
-            <a href="detallesProducto.html?id=1" class="btn-comprar">Ver más</a>
-          </div>
-
-          <!-- Producto 2 -->
-          <div class="producto" data-marca="Dior" data-genero="Hombre" data-precio="50990">
-            <span class="descuento">-20%</span>
-            <img src="img/Dior Homme Intense Edp 100ml Hombre.webp" alt="Perfume 2">
-            <h4>Dior Homme Intense 2025 100 ML (H)</h4>
-            <p class="precio-normal">$63.000</p>
-            <p class="precio-internet">$50.990</p>
-            <a href="detallesProducto.html?id=2" class="btn-comprar">Ver más</a>
-          </div>
-
-          <!-- Producto 3 -->
-          <div class="producto" data-marca="Creed" data-genero="Unisex" data-precio="119900">
-            <span class="descuento">-15%</span>
-            <img src="img/Creed Aventus.webp" alt="Perfume 3">
-            <h4>Aventus Creed 120 ML (H/M)</h4>
-            <p class="precio-normal">$140.000</p>
-            <p class="precio-internet">$119.900</p>
-            <a href="detallesProducto.html?id=3" class="btn-comprar">Ver más</a>
-          </div>
-
-          <!-- Producto 4 -->
-          <div class="producto" data-marca="Chanel" data-genero="Mujer" data-precio="69900">
-            <span class="descuento">-25%</span>
-            <img src="img/Coco Mademoiselle Intense Chanel.webp" alt="Perfume 4">
-            <h4>Coco Mademoiselle Intense Chanel 100 ML (M)</h4>
-            <p class="precio-normal">$92.000</p>
-            <p class="precio-internet">$69.900</p>
-            <a href="detallesProducto.html?id=4" class="btn-comprar">Ver más</a>
-          </div>
-
-          <!-- Producto 5 -->
-          <div class="producto" data-marca="Paco Rabanne" data-genero="Hombre" data-precio="47990">
-            <span class="descuento">-30%</span>
-            <img src="img/1 Million Rabanne.webp" alt="Perfume 5">
-            <h4>P1 Million Rabanne 100 ML (H)</h4>
-            <p class="precio-normal">$68.500</p>
-            <p class="precio-internet">$47.990</p>
-            <a href="detallesProducto.html?id=5" class="btn-comprar">Ver más</a>
-          </div>
-
-          <!-- Producto 6 -->
-          <div class="producto" data-marca="Carolina Herrera" data-genero="Mujer" data-precio="58990">
-            <span class="descuento">-28%</span>
-            <img src="img/Good Girl Carolina Herrera.jpg" alt="Perfume 6">
-            <h4>Good Girl Carolina Herrera 80 ML (M)</h4>
-            <p class="precio-normal">$82.000</p>
-            <p class="precio-internet">$58.990</p>
-            <a href="detallesProducto.html?id=6" class="btn-comprar">Ver más</a>
-          </div>
-
-          <!-- Producto 7 -->
-          <div class="producto" data-marca="Versace" data-genero="Hombre" data-precio="45990">
-            <span class="descuento">-22%</span>
-            <img src="img/Eros Versace.webp" alt="Perfume 7">
-            <h4>Eros Versace 100 ML (H)</h4>
-            <p class="precio-normal">$59.000</p>
-            <p class="precio-internet">$45.990</p>
-            <a href="detallesProducto.html?id=7" class="btn-comprar">Ver más</a>
-          </div>
-
-          <!-- Producto 8 -->
-          <div class="producto" data-marca="Lancome" data-genero="Mujer" data-precio="54990">
-            <span class="descuento">-18%</span>
-            <img src="img/La Vie Est Belle Lancôme.webp" alt="Perfume 8">
-            <h4>La Vie Est Belle Lancôme 100 ML (M)</h4>
-            <p class="precio-normal">$67.000</p>
-            <p class="precio-internet">$54.990</p>
-            <a href="detallesProducto.html?id=8" class="btn-comprar">Ver más</a>
-          </div>
-
-          <!-- Producto 9 -->
-          <div class="producto" data-marca="Tom Ford" data-genero="Unisex" data-precio="159900">
-            <span class="descuento">-12%</span>
-            <img src="img/Black Orchid Tom Ford.jpg" alt="Perfume 9">
-            <h4>Black Orchid Tom Ford 100 ML (H/M)</h4>
-            <p class="precio-normal">$182.000</p>
-            <p class="precio-internet">$159.900</p>
-            <a href="detallesProducto.html?id=9" class="btn-comprar">Ver más</a>
-          </div>
-
-          <!-- Producto 10 -->
-          <div class="producto" data-marca="Burberry" data-genero="Mujer" data-precio="63990">
-            <span class="descuento">-19%</span>
-            <img src="img/Burberry Brit Eau de Toilette Burberry.jpg" alt="Perfume 10">
-            <h4>Burberry Brit Eau de Toilette Burberry 100 ML (M)</h4>
-            <p class="precio-normal">$79.000</p>
-            <p class="precio-internet">$63.990</p>
-            <a href="detallesProducto.html?id=10" class="btn-comprar">Ver más</a>
-          </div>
-
-          <!-- Producto 11 -->
-          <div class="producto" data-marca="Yves Saint Laurent" data-genero="Hombre" data-precio="72990">
-            <span class="descuento">-21%</span>
-            <img src="img/La Nuit de l'Homme Yves Saint Laurent.webp" alt="Perfume 11">
-            <h4>La Nuit de l'Homme Yves Saint Laurent 100 ML (H)</h4>
-            <p class="precio-normal">$92.500</p>
-            <p class="precio-internet">$72.990</p>
-            <a href="detallesProducto.html?id=11" class="btn-comprar">Ver más</a>
-          </div>
-
-          <!-- Producto 12 -->
-          <div class="producto" data-marca="Valentino" data-genero="Hombre" data-precio="38990">
-            <span class="descuento">-27%</span>
-            <img src="img/Valentino Uomo Born In Roma Intense Valentino.jpg" alt="Perfume 12">
-            <h4>Valentino Uomo Born In Roma Intense Valentino 100 ML (H)</h4>
-            <p class="precio-normal">$53.000</p>
-            <p class="precio-internet">$38.990</p>
-            <a href="detallesProducto.html?id=12" class="btn-comprar">Ver más</a>
-          </div>
-
+        <div class="producto" data-marca="Armaf" data-genero="Hombre" data-precio="38990">
+          <span class="descuento">-22%</span>
+          <img src="img/Le Parfait Pour Homme Armaf.webp" alt="Perfume Le Parfait Armaf">
+          <h4>Le Parfait Pour Homme Armaf 200 ML (H)</h4>
+          <p class="precio-normal">$49.990</p>
+          <p class="precio-internet">$38.990</p>
+          <a href="detallesProducto.html?id=1" class="btn-comprar">Ver más</a>
         </div>
+
+        <div class="producto" data-marca="Dior" data-genero="Hombre" data-precio="179990">
+          <span class="descuento">-3%</span>
+          <img src="img/Dior Homme Intense Edp 100ml Hombre.webp" alt="Perfume Dior Homme Intense">
+          <h4>Dior Homme Intense 2025 100 ML (H)</h4>
+          <p class="precio-normal">$185.900</p>
+          <p class="precio-internet">$179.990</p>
+          <a href="detallesProducto.html?id=2" class="btn-comprar">Ver más</a>
+        </div>
+
+        <div class="producto" data-marca="Creed" data-genero="Unisex" data-precio="459990">
+          <span class="descuento">-6%</span>
+          <img src="img/Creed Aventus.webp" alt="Perfume Aventus Creed">
+          <h4>Aventus Creed 100 ML (H/M)</h4>
+          <p class="precio-normal">$489.990</p>
+          <p class="precio-internet">$459.990</p>
+          <a href="detallesProducto.html?id=3" class="btn-comprar">Ver más</a>
+        </div>
+
+        <div class="producto" data-marca="Chanel" data-genero="Mujer" data-precio="189990">
+          <span class="descuento">-4%</span>
+          <img src="img/Coco Mademoiselle Intense Chanel.webp" alt="Perfume Coco Mademoiselle Chanel">
+          <h4>Coco Mademoiselle Intense Chanel 100 ML (M)</h4>
+          <p class="precio-normal">$198.900</p>
+          <p class="precio-internet">$189.990</p>
+          <a href="detallesProducto.html?id=4" class="btn-comprar">Ver más</a>
+        </div>
+
+        <div class="producto" data-marca="Rabanne" data-genero="Hombre" data-precio="74990">
+          <span class="descuento">-23%</span>
+          <img src="img/1 Million Rabanne.webp" alt="Perfume 1 Million Rabanne">
+          <h4>1 Million Rabanne 100 ML (H)</h4>
+          <p class="precio-normal">$96.900</p>
+          <p class="precio-internet">$74.990</p>
+          <a href="detallesProducto.html?id=5" class="btn-comprar">Ver más</a>
+        </div>
+
+        <div class="producto" data-marca="Carolina Herrera" data-genero="Mujer" data-precio="99990">
+          <span class="descuento">-13%</span>
+          <img src="img/Good Girl Carolina Herrera.jpg" alt="Perfume Good Girl Carolina Herrera">
+          <h4>Good Girl Carolina Herrera 80 ML (M)</h4>
+          <p class="precio-normal">$114.900</p>
+          <p class="precio-internet">$99.990</p>
+          <a href="detallesProducto.html?id=6" class="btn-comprar">Ver más</a>
+        </div>
+
+        <div class="producto" data-marca="Versace" data-genero="Hombre" data-precio="69990">
+          <span class="descuento">-22%</span>
+          <img src="img/Eros Versace.webp" alt="Perfume Eros Versace">
+          <h4>Eros Versace 100 ML (H)</h4>
+          <p class="precio-normal">$89.900</p>
+          <p class="precio-internet">$69.990</p>
+          <a href="detallesProducto.html?id=7" class="btn-comprar">Ver más</a>
+        </div>
+
+        <div class="producto" data-marca="Lancome" data-genero="Mujer" data-precio="109990">
+          <span class="descuento">-12%</span>
+          <img src="img/La Vie Est Belle Lancôme.webp" alt="Perfume La Vie Est Belle Lancôme">
+          <h4>La Vie Est Belle Lancôme 100 ML (M)</h4>
+          <p class="precio-normal">$124.900</p>
+          <p class="precio-internet">$109.990</p>
+          <a href="detallesProducto.html?id=8" class="btn-comprar">Ver más</a>
+        </div>
+
+        <div class="producto" data-marca="Tom Ford" data-genero="Unisex" data-precio="195900">
+          <span class="descuento">-7%</span>
+          <img src="img/Black Orchid Tom Ford.jpg" alt="Perfume Black Orchid Tom Ford">
+          <h4>Black Orchid Tom Ford 100 ML (H/M)</h4>
+          <p class="precio-normal">$210.000</p>
+          <p class="precio-internet">$195.900</p>
+          <a href="detallesProducto.html?id=9" class="btn-comprar">Ver más</a>
+        </div>
+
+        <div class="producto" data-marca="Burberry" data-genero="Mujer" data-precio="79990">
+          <span class="descuento">-14%</span>
+          <img src="img/Burberry Brit Eau de Toilette Burberry.jpg" alt="Perfume Burberry Brit">
+          <h4>Burberry Brit Eau de Toilette Burberry 100 ML (M)</h4>
+          <p class="precio-normal">$92.900</p>
+          <p class="precio-internet">$79.990</p>
+          <a href="detallesProducto.html?id=10" class="btn-comprar">Ver más</a>
+        </div>
+
+        <div class="producto" data-marca="Yves Saint Laurent" data-genero="Hombre" data-precio="99990">
+          <span class="descuento">-17%</span>
+          <img src="img/La Nuit de l'Homme Yves Saint Laurent.webp" alt="Perfume La Nuit de l'Homme">
+          <h4>La Nuit de l'Homme Yves Saint Laurent 100 ML (H)</h4>
+          <p class="precio-normal">$119.900</p>
+          <p class="precio-internet">$99.990</p>
+          <a href="detallesProducto.html?id=11" class="btn-comprar">Ver más</a>
+        </div>
+
+        <div class="producto" data-marca="Valentino" data-genero="Hombre" data-precio="114990">
+          <span class="descuento">-11%</span>
+          <img src="img/Valentino Uomo Born In Roma Intense Valentino.jpg" alt="Perfume Valentino Uomo">
+          <h4>Valentino Uomo Born In Roma Intense Valentino 100 ML (H)</h4>
+          <p class="precio-normal">$129.900</p>
+          <p class="precio-internet">$114.990</p>
+          <a href="detallesProducto.html?id=12" class="btn-comprar">Ver más</a>
+        </div>
+
+      </div>
     </section>
   </main>
 
