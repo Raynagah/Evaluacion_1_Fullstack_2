@@ -1,0 +1,263 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f9;
+}
+
+/* Header */
+header {
+  background: #561f45;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+.contenedor {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+/* Filtros */
+.filtros {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.filtros h3 {
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.filtros label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.filtros input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.filtros button {
+  margin-top: 10px;
+  margin-right: 5px;
+  padding: 8px 12px;
+  background: #561f45;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.filtros button:hover {
+  background: #7b2c59;
+}
+
+#mensaje-sin-resultados {
+  display: none;
+  color: #c0392b;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* Catálogo */
+.catalogo h2 {
+  margin-bottom: 20px;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.producto {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  position: relative;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.producto:hover {
+  transform: scale(1.03);
+}
+
+.producto img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.producto[style*="display: none"] {
+  opacity: 0;
+}
+
+/* Descuento */
+.descuento {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #c0392b;
+  color: #fff;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Precios */
+.precio-normal {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+}
+
+.precio-internet {
+  font-weight: bold;
+  font-size: 18px;
+  color: #27ae60;
+  margin: 5px 0;
+}
+
+/* Botón Ver Más */
+.btn-comprar {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #561f45;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn-comprar:hover {
+  background: #7b2c59;
+}
+
+/* Footer */
+footer {
+  background: #7b2c59;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* DETALLE PRODUCTO */
+
+.detalle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.detalle img {
+  flex: 1 1 350px;
+  max-width: 400px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.detalle .info {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detalle .info h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #561f45;
+}
+
+.detalle .info p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.detalle .precio-normal {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 15px;
+}
+
+.detalle .precio-internet {
+  font-weight: bold;
+  font-size: 22px;
+  color: #27ae60;
+  margin: 10px 0;
+}
+
+.detalle button {
+  margin-top: 20px;
+  padding: 12px;
+  background: #561f45;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.detalle button:hover {
+  background: #7b2c59;
+}
+
+/* Detalle responsivo */
+@media (max-width: 768px) {
+  .detalle {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .detalle img {
+    max-width: 90%;
+  }
+
+  .detalle .info {
+    align-items: center;
+  }
+}
