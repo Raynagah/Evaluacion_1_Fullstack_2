@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda DuocFragancias - Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/pagPrincipal.css">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/775/775307.png">
+</head>
+
+<body>
+    <!-- Menú de navegación MODIFICADO -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
+        <div class="container">
+            <a class="navbar-brand itemNavbarInicio" href="paginaPrincipal.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/775/775307.png" alt="Logo Tienda DuocFragancias"
+                    height="40">
+                <span>Inicio</span> <!-- Cambiado de "DuocFragancias" a "Inicio" -->
+            </a>
+            <a class="navbar-brand" href="login.html">
+                <img src="https://cdn-icons-png.freepik.com/256/30/30422.png" alt="Iniciar sesión"
+                    height="40">
+                <span>Iniciar sesión</span> <!-- Cambiado de "Inicio" a "Iniciar sesión" -->
+            </a>
+            <span class="navbar-text">
+                ¡Bienvenido, Invitado!
+            </span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="paginaPrincipal.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categorias.html">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Ingresar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section pt-5"> <!-- Añadido pt-5 para padding top -->
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-4 fw-bold text-purple">Tienda DuocFragancias</h1>
+                <p class="lead">La mejor selección de perfumes importados y nacionales con los precios más convenientes
+                    del mercado.</p>
+                <a href="#" class="btn btn-purple btn-lg">Explorar Productos</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="https://gentleman.elperiodico.com/wp-content/uploads/2024/07/Perfume-hombre-YakobchukOlena.jpg" 
+                     alt="Perfumes" class="img-fluid rounded shadow" style="max-width: 300px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Productos destacados -->
+    <section class="productos-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 text-purple">Productos Destacados</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card card-producto h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR809Q4Aq9sAyaug7uoTFzyiVPUIvCllt76Vw&s" 
+                             class="card-img-top" alt="Perfume 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Fragancia Nocturna</h5>
+                            <p class="card-text">Ideal para ocasiones especiales y eventos nocturnos.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="producto-precio">$34.990</span>
+                                <a href="#" class="btn btn-sm btn-purple">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-producto h-100">
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3" 
+                             class="card-img-top" alt="Perfume 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Esencia Fresca</h5>
+                            <p class="card-text">Notas cítricas y frescas para el día a día.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="producto-precio">$29.990</span>
+                                <a href="#" class="btn btn-sm btn-purple">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-producto h-100">
+                        <img src="https://i5.walmartimages.com/asr/2e062367-ebdc-47d9-a1d6-31593e838427.8f53dc1eb2ce05c9700d2e8f7a89f3b4.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" 
+                             class="card-img-top" alt="Perfume 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Aroma Elegante</h5>
+                            <p class="card-text">Fragancia sofisticada con notas amaderadas.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="producto-precio">$39.990</span>
+                                <a href="#" class="btn btn-sm btn-purple">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-purple">Ver Todos los Productos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Tienda DuocFragancias</h5>
+                    <p>La mejor selección de perfumes con entrega a todo Chile.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p>Email: contacto@tiendaduocpm.cl<br>Teléfono: +56 9 1234 5678</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Inicio</a></li>
+                        <li><a href="#" class="text-white">Productos</a></li>
+                        <li><a href="#" class="text-white">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2025 Tienda DuocFragancias. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
