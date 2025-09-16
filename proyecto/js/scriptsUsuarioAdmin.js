@@ -1,12 +1,12 @@
 let listaUsuarios = [];
 const CLAVE_USUARIOS = 'tiendaDuoc_usuarios';
 
-// --- INICIALIZACIÓN ---
+// INICIALIZACIÓN
 document.addEventListener('DOMContentLoaded', () => {
     inicializarUsuarios();
     configurarListenersUsuario();
     
-    // --- PASO CLAVE ---
+
     // Llamamos a la función de regiones-comunas.js para que prepare el modal.
     // Le pasamos los IDs de los 'select' que están en nuestro modal de usuario.
     if (typeof cargarRegiones === 'function') {
