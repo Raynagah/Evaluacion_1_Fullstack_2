@@ -1,4 +1,3 @@
-// Espera a que el contenido del HTML se cargue.
 document.addEventListener('DOMContentLoaded', () => {
     // --- GUARDIÁN DE SESIÓN ---
     // Verificamos si hay una sesión activa al cargar la página.

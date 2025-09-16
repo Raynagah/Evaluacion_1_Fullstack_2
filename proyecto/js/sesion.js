@@ -1,4 +1,3 @@
-// Espera a que el contenido del HTML se cargue.
 document.addEventListener('DOMContentLoaded', () => {
     // Seleccionamos los elementos de la navegación que vamos a mostrar u ocultar.
     const linkLogin = document.getElementById('link-login');

@@ -1,5 +1,3 @@
-// ../js/scriptsUsuarioAdmin.js
-
 let listaUsuarios = [];
 const CLAVE_USUARIOS = 'tiendaDuoc_usuarios';
 
@@ -21,7 +19,7 @@ function inicializarUsuarios() {
     if (usuariosAlmacenados) {
         listaUsuarios = JSON.parse(usuariosAlmacenados);
     } else {
-        // ... (tus datos de ejemplo)
+        // ... (datos de ejemplo)
     }
     mostrarUsuariosEnTabla();
 }
@@ -33,9 +31,7 @@ function mostrarUsuariosEnTabla() {
 
     listaUsuarios.forEach(usuario => {
         const tr = document.createElement('tr');
-        
-        // --- AJUSTE REALIZADO AQUÍ ---
-        // Ahora, 'usuario.nombre' y 'usuario.apellidos' están en celdas <td> separadas.
+    
         tr.innerHTML = `
             <td>${usuario.run}</td>
             <td>${usuario.nombre}</td>

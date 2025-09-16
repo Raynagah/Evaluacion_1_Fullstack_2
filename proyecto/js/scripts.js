@@ -1,7 +1,3 @@
-// -------------------------------------------------
-//          SCRIPT PRINCIPAL DE LA APLICACIÓN
-// -------------------------------------------------
-
 // Función de utilidad para guardar en LocalStorage
 function guardarEnLocalStorage(clave, datos) {
     localStorage.setItem(clave, JSON.stringify(datos));

@@ -1,7 +1,3 @@
-// -------------------------------------------------
-//          MÓDULO DE GESTIÓN DE PRODUCTOS
-// -------------------------------------------------
-
 // Variables y constantes específicas para productos
 let listaProductos = [];
 const CLAVE_PRODUCTOS = 'tiendaDuoc_productos';
@@ -22,7 +18,7 @@ function inicializarProductos() {
                 stock: 15,
                 stockCritico: 5,
                 categoria: 'hombre',
-                imagen: 'data:image/svg+xml;base64,...' // Imagen placeholder
+                imagen: 'data:image/svg+xml;base64,...'
             },
             {
                 codigo: 'CHN002',
@@ -32,7 +28,7 @@ function inicializarProductos() {
                 stock: 8,
                 stockCritico: 3,
                 categoria: 'mujer',
-                imagen: 'data:image/svg+xml;base64,...' // Imagen placeholder
+                imagen: 'data:image/svg+xml;base64,...' 
             }
         ];
         guardarEnLocalStorage(CLAVE_PRODUCTOS, listaProductos);
@@ -83,7 +79,6 @@ function mostrarProductosEnTabla() {
 // Función para mostrar productos en la página de inicio
 function mostrarProductosEnHome() {
     console.log('Mostrando productos en la página de inicio...');
-    // Aquí iría tu lógica para renderizar los productos en `index.html`
 }
 
 // Función para guardar (crear o actualizar) un producto
@@ -95,8 +90,7 @@ function guardarProducto() {
     const stock = parseInt(document.getElementById('stockProducto').value);
     const stockCritico = document.getElementById('stockCriticoProducto').value ? parseInt(document.getElementById('stockCriticoProducto').value) : null;
     const categoria = document.getElementById('categoriaProducto').value;
-    const imagen = 'data:image/svg+xml;base64,...'; // Placeholder
-
+    const imagen = 'data:image/svg+xml;base64,...';
     const productoExistente = listaProductos.find(p => p.codigo === codigo);
 
     if (productoExistente) {

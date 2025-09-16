@@ -1,7 +1,4 @@
-// ../js/login.js
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Asegúrate de que tu login.html tenga un form con id="form-login".
     const formLogin = document.getElementById('form-login');
 
     formLogin.addEventListener('submit', (event) => {

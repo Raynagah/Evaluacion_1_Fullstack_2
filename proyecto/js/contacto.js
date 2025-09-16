@@ -5,8 +5,8 @@ document.querySelector('form').addEventListener('submit', function(e) {
 
     // 1. Obtener los valores de los campos del formulario, quitando espacios en blanco.
     let nombre = document.getElementById('nombre').value.trim();
-    let correo = document.getElementById('email').value.trim(); // Corregido a 'email' para que coincida con tu HTML
-    let mensaje = document.getElementById('mensaje').value.trim(); // Corregido a 'mensaje'
+    let correo = document.getElementById('email').value.trim();
+    let mensaje = document.getElementById('mensaje').value.trim(); 
 
     // 2. Realizar las validaciones
     if (nombre === "" || nombre.length > 100) {

@@ -1,5 +1,3 @@
-// ../js/detalle.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const productoId = params.get('id');
@@ -26,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('tipo').textContent = productoEncontrado.descripcion;
     document.getElementById('precio-internet').textContent = `$${productoEncontrado.precio.toLocaleString('es-CL')}`;
 
-    // --- LÓGICA DEL BOTÓN "AGREGAR AL CARRITO" MEJORADA ---
 const agregarBtn = document.getElementById('agregarCarroBtn');
 agregarBtn.addEventListener('click', () => {
     // Verificamos si hay una sesión activa ANTES de agregar al carrito.

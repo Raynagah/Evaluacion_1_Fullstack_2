@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: document.getElementById('nombre').value,
             apellidos: document.getElementById('apellidos').value,
             correo: correo,
-            // Se usa 'contrasena' para ser compatible con la vista de admin.
             contrasena: document.getElementById('password').value,
             tipoUsuario: document.getElementById('tipoUsuario').value,
             fechaNacimiento: document.getElementById('fechaNacimiento').value,

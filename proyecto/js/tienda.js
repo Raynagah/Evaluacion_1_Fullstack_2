@@ -3,8 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // 1. Leemos los productos de la "bodega" (localStorage)
-    const productos = JSON.parse(localStorage.getItem('tiendaDuoc_productos')) || []; // <-- Clave correcta
-    // ...
+    const productos = JSON.parse(localStorage.getItem('tiendaDuoc_productos')) || [];
 
     // 2. Verificamos si hay productos para mostrar
     if (productos.length === 0) {

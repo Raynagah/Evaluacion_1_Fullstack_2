@@ -1,4 +1,3 @@
-// Objeto que contiene todas las regiones y comunas de Chile.
 const REGIONES_Y_COMUNAS = {
     "regiones": [
         { "nombre": "Arica y Parinacota", "comunas": ["Arica", "Camarones", "Putre", "General Lagos"] },
@@ -20,7 +19,6 @@ const REGIONES_Y_COMUNAS = {
     ]
 };
 
-// --- FUNCIÓN CENTRALIZADA ---
 // Esta función puede ser llamada desde cualquier otro script para cargar las regiones.
 function cargarRegiones(idRegionSelect, idComunaSelect) {
     const regionSelect = document.getElementById(idRegionSelect);
@@ -41,7 +39,7 @@ function cargarRegiones(idRegionSelect, idComunaSelect) {
     regionSelect.addEventListener('change', () => {
         comunaSelect.innerHTML = '<option value="" selected disabled>Seleccione una comuna</option>';
         const regionSeleccionada = REGIONES_Y_COMUNAS.regiones.find(r => r.nombre === regionSelect.value);
-        
+
         if (regionSeleccionada) {
             regionSeleccionada.comunas.forEach(comuna => {
                 const option = document.createElement('option');
