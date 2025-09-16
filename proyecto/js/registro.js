@@ -74,4 +74,5 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('¡Registro completado con éxito! Serás redirigido para iniciar sesión.');
         window.location.href = 'login.html';
     }
+    cargarRegiones('region', 'comuna');
 });

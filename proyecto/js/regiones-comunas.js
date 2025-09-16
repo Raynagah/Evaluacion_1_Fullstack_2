@@ -1,5 +1,3 @@
-// ../js/regiones-comunas.js
-
 // Objeto que contiene todas las regiones y comunas de Chile.
 const REGIONES_Y_COMUNAS = {
     "regiones": [
