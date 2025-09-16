@@ -1,49 +1,77 @@
-// Esperamos a que todo el HTML se haya cargado para ejecutar el script.
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleccionamos el formulario de registro por su ID.
-    const formRegistro = document.getElementById('form-registro');
+    // CORRECCIÓN 1: Apuntamos al ID correcto de tu formulario: 'form-registro'.
+    const form = document.getElementById('form-registro');
 
-    formRegistro.addEventListener('submit', (event) => {
-        // Prevenimos que el formulario se envíe de la forma tradicional.
-        event.preventDefault();
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevenimos el envío automático.
 
-        // Obtenemos los valores de los campos del formulario.
-        const correo = document.getElementById('correo').value;
-        
-        // ===== CAMBIO: SE CORRIGIERON LOS ID DE LAS CONTRASEÑAS =====
-        const password = document.getElementById('password').value;
-        const confirmarPassword = document.getElementById('confirmarPassword').value;
+        // Recolectamos los campos del formulario.
+        const correoInput = document.getElementById('correo');
+        const confirmarCorreoInput = document.getElementById('confirmarCorreo');
+        const passInput = document.getElementById('password'); // ID de tu HTML
+        const confirmPassInput = document.getElementById('confirmarPassword'); // ID de tu HTML
 
-        // Validación 1: Las contraseñas deben coincidir.
-        if (password !== confirmarPassword) {
-            alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
-            return; // Detenemos la ejecución si no coinciden.
+        // --- Validaciones Personalizadas ---
+        let esValido = true;
+
+        // 1. Validar que los correos coincidan.
+        if (correoInput.value !== confirmarCorreoInput.value) {
+            alert('Los correos electrónicos no coinciden.');
+            esValido = false;
         }
 
-        // Obtenemos la lista de usuarios de localStorage.
-        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        // 2. Validar que las contraseñas coincidan.
+        if (passInput.value !== confirmPassInput.value) {
+            alert('Las contraseñas no coinciden.');
+            esValido = false;
+        }
+        
+        // Si alguna validación falló, nos detenemos aquí.
+        if (!esValido) {
+            return; 
+        }
 
-        // Validación 2: El correo no debe estar ya registrado.
-        const usuarioExistente = usuarios.find(usuario => usuario.correo === correo);
+        // Si las validaciones pasan, intentamos registrar al usuario.
+        registrarUsuario();
+    });
+
+    function registrarUsuario() {
+        // Usamos la misma clave que el panel de administrador.
+        const claveUsuarios = 'tiendaDuoc_usuarios';
+        let usuarios = JSON.parse(localStorage.getItem(claveUsuarios)) || [];
+
+        // CORRECCIÓN 2: Leemos desde 'rut', no 'run'.
+        const run = document.getElementById('rut').value;
+        const correo = document.getElementById('correo').value;
+
+        // Verificamos si el usuario ya existe.
+        const usuarioExistente = usuarios.find(user => user.run === run || user.correo === correo);
         if (usuarioExistente) {
-            alert('Este correo electrónico ya está registrado.');
+            alert('El RUT o el correo electrónico ya se encuentran registrados.');
             return;
         }
 
-        // Si todas las validaciones pasan, creamos el nuevo usuario.
+        // Creamos el objeto de usuario completo con todos los datos del formulario.
         const nuevoUsuario = {
+            // Se usa 'run' para ser compatible con la vista de admin.
+            run: run, 
+            nombre: document.getElementById('nombre').value,
+            apellidos: document.getElementById('apellidos').value,
             correo: correo,
-            password: password
+            // Se usa 'contrasena' para ser compatible con la vista de admin.
+            contrasena: document.getElementById('password').value,
+            tipoUsuario: document.getElementById('tipoUsuario').value,
+            fechaNacimiento: document.getElementById('fechaNacimiento').value,
+            region: document.getElementById('region').value,
+            comuna: document.getElementById('comuna').value,
+            direccion: document.getElementById('direccion').value
         };
 
-        // Añadimos el nuevo usuario al arreglo.
+        // Guardamos el nuevo usuario.
         usuarios.push(nuevoUsuario);
+        localStorage.setItem(claveUsuarios, JSON.stringify(usuarios));
 
-        // Guardamos el arreglo actualizado de vuelta en localStorage.
-        localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
-        // Damos un mensaje de éxito y redirigimos al login.
-        alert('¡Registro exitoso! Ahora serás redirigido para iniciar sesión.');
+        alert('¡Registro completado con éxito! Serás redirigido para iniciar sesión.');
         window.location.href = 'login.html';
-    });
+    }
 });
