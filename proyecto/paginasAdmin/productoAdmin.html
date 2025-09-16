@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos - Tienda DuocFragancias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/775/775307.png">
+</head>
+
+<body>
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
+        <div class="container">
+            <a class="navbar-brand itemNavbarInicio" href="index.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/775/775307.png" alt="Logo Tienda Duoc Puerto Montt"
+                    height="40">
+                <span>Inicio</span>
+            </a>
+            <a class="navbar-brand" href="indexAdmin.html">
+                <img src="https://cdn-icons-png.freepik.com/256/30/30422.png" alt="Logo Tienda Duoc Puerto Montt"
+                    height="40">
+                <span>Inicio Admin</span>
+            </a>
+            <span class="navbar-text">
+                ¡Bienvenido, Administrador!
+            </span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexAdmin.html">Inicio Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="productoAdmin.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usuarioAdmin.html">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Salir</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="text-purple">Gestión de Productos</h1>
+            <button class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#modalProducto">Nuevo
+                Producto</button>
+        </div>
+
+        <!-- Tabla de productos -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-purple">
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Categoría</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaProductos">
+                    <!-- Los productos se cargarán dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal para nuevo/editar producto -->
+    <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalProductoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-purple text-white">
+                    <h5 class="modal-title" id="modalProductoLabel">Nuevo Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formProducto" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="codigoProducto" class="form-label">Código Producto *</label>
+                                <input type="text" class="form-control" id="codigoProducto" minlength="3" required>
+                                <div class="invalid-feedback">El código es requerido y debe tener al menos 3 caracteres.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="nombreProducto" class="form-label">Nombre *</label>
+                                <input type="text" class="form-control" id="nombreProducto" maxlength="100" required>
+                                <div class="invalid-feedback">El nombre es requerido.</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcionProducto" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcionProducto" rows="3" maxlength="500"></textarea>
+                            <div class="form-text">Máximo 500 caracteres.</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="precioProducto" class="form-label">Precio *</label>
+                                <input type="number" class="form-control" id="precioProducto" min="0" step="0.01"
+                                    required>
+                                <div class="invalid-feedback">El precio es requerido y debe ser mayor o igual a 0.</div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="stockProducto" class="form-label">Stock *</label>
+                                <input type="number" class="form-control" id="stockProducto" min="0" required>
+                                <div class="invalid-feedback">El stock es requerido y debe ser un número entero mayor o
+                                    igual a 0.</div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="stockCriticoProducto" class="form-label">Stock Crítico</label>
+                                <input type="number" class="form-control" id="stockCriticoProducto" min="0">
+                                <div class="form-text">Se mostrará una alerta cuando el stock sea igual o inferior a
+                                    este valor.</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="categoriaProducto" class="form-label">Categoría *</label>
+                                <select class="form-select" id="categoriaProducto" required>
+                                    <option value="" selected disabled>Seleccione una categoría</option>
+                                    <option value="hombre">Perfumes para Hombre</option>
+                                    <option value="mujer">Perfumes para Mujer</option>
+                                    <option value="unisex">Perfumes Unisex</option>
+                                    <option value="importado">Perfumes Importados</option>
+                                    <option value="nacional">Perfumes Nacionales</option>
+                                </select>
+                                <div class="invalid-feedback">Debe seleccionar una categoría.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="imagenProducto" class="form-label">Imagen</label>
+                                <input type="file" class="form-control" id="imagenProducto" accept="image/*">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-purple" id="guardarProducto">Guardar Producto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Tienda DuocFragancias</h5>
+                    <p>La mejor selección de perfumes con entrega a todo Chile.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p>Email: contacto@tiendaduocpm.cl<br>Teléfono: +56 9 1234 5678</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Inicio</a></li>
+                        <li><a href="producto.html" class="text-white">Productos</a></li>
+                        <li><a href="usuario.html" class="text-white">Usuarios</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2025 Tienda DuocFragancias. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/scriptsProductoAdmin.js"></script>
+    <script src="../js/scripts.js"></script>
+</body>
+
+</html>

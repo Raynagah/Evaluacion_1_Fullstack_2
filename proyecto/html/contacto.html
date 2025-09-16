@@ -8,10 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/contacto.css">
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/775/775307.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!-- Menú de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
         <div class="container">
             <a class="navbar-brand itemNavbarInicio" href="index.html">
@@ -31,10 +31,10 @@
                         <a class="nav-link" href="index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="productos.html">Productos</a>
+                        <a class="nav-link" href="tiedna.html">Tienda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="categorias.html">Categorías</a>
+                        <a class="nav-link" href="blogs.html">Blogs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="carrito.html">Carrito</a>
@@ -47,7 +47,6 @@
         </div>
     </nav>
 
-    <!-- Formulario de Contacto -->
     <section class="contacto-section py-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -58,7 +57,6 @@
                     </div>
 
                     <div class="row">
-                        <!-- Información de contacto -->
                         <div class="col-md-5 mb-4">
                             <div class="card h-100">
                                 <div class="card-header bg-purple text-white">
@@ -105,7 +103,6 @@
                             </div>
                         </div>
 
-                        <!-- Formulario -->
                         <div class="col-md-7">
                             <div class="card">
                                 <div class="card-header bg-purple text-white">
@@ -113,58 +110,19 @@
                                 </div>
                                 <div class="card-body">
                                     <form>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="nombre" class="form-label">Nombre *</label>
-                                                    <input type="text" class="form-control" id="nombre" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="apellido" class="form-label">Apellido *</label>
-                                                    <input type="text" class="form-control" id="apellido" required>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="email" class="form-label">Email *</label>
-                                                    <input type="email" class="form-control" id="email" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="telefono" class="form-label">Teléfono</label>
-                                                    <input type="tel" class="form-control" id="telefono">
-                                                </div>
-                                            </div>
+                                        <div class="mb-3">
+                                            <label for="nombre" class="form-label">Nombre *</label>
+                                            <input type="text" class="form-control" id="nombre" required>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="asunto" class="form-label">Asunto *</label>
-                                            <select class="form-select" id="asunto" required>
-                                                <option value="" selected disabled>Seleccione un asunto</option>
-                                                <option value="consulta">Consulta General</option>
-                                                <option value="soporte">Soporte Técnico</option>
-                                                <option value="ventas">Información de Ventas</option>
-                                                <option value="devolucion">Devoluciones</option>
-                                                <option value="otro">Otro</option>
-                                            </select>
+                                            <label for="email" class="form-label">Email *</label>
+                                            <input type="email" class="form-control" id="email" required>
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="mensaje" class="form-label">Mensaje *</label>
                                             <textarea class="form-control" id="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
-                                        </div>
-
-                                        <div class="form-check mb-4">
-                                            <input class="form-check-input" type="checkbox" id="newsletter">
-                                            <label class="form-check-label" for="newsletter">
-                                                Suscribirme al newsletter para recibir novedades y ofertas
-                                            </label>
                                         </div>
 
                                         <div class="d-grid">
@@ -180,7 +138,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container">
             <div class="row">
@@ -198,6 +155,7 @@
                         <li><a href="index.html" class="text-white">Inicio</a></li>
                         <li><a href="productos.html" class="text-white">Productos</a></li>
                         <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                        <li><a href="nosotros.html" class="text-white">Nosotros</a></li>
                     </ul>
                 </div>
             </div>
@@ -208,7 +166,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</body>
+    
+    <script src="../js/contacto.js"></script>
 
+</body>
 </html>
