@@ -11,17 +11,22 @@
 </head>
 
 <body>
-  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
     <div class="container">
       <a class="navbar-brand itemNavbarInicio" href="index.html">
         <img src="https://cdn-icons-png.flaticon.com/512/775/775307.png" alt="Logo" height="40">
         <span>Inicio</span>
       </a>
-      <a class="navbar-brand" href="login.html">
+      
+      <a id="link-login" class="navbar-brand" href="login.html">
         <img src="https://cdn-icons-png.freepik.com/256/30/30422.png" alt="Login" height="40">
         <span>Iniciar sesión</span>
       </a>
+      <a id="link-logout" class="navbar-brand" href="#" style="display: none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/126/126467.png" alt="Cerrar Sesión" height="40">
+        <span>Cerrar Sesión</span>
+      </a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,13 +42,11 @@
     </div>
   </nav>
 
-  <!-- CATÁLOGO -->
   <section class="py-5">
     <div class="container">
       <h2 class="text-center mb-5 text-purple">Nuestros Perfumes</h2>
       <div class="row g-4">
 
-        <!-- Producto 1 -->
         <div class="col-md-3">
           <div class="card card-producto h-100">
             <span class="descuento">-22%</span>
@@ -57,7 +60,6 @@
           </div>
         </div>
 
-        <!-- Producto 2 -->
         <div class="col-md-3">
           <div class="card card-producto h-100">
             <span class="descuento">-3%</span>
@@ -71,7 +73,6 @@
           </div>
         </div>
 
-        <!-- Producto 3 -->
         <div class="col-md-3">
           <div class="card card-producto h-100">
             <span class="descuento">-6%</span>
@@ -85,7 +86,6 @@
           </div>
         </div>
 
-        <!-- Producto 4 -->
         <div class="col-md-3">
           <div class="card card-producto h-100">
             <span class="descuento">-4%</span>
@@ -99,7 +99,6 @@
           </div>
         </div>
 
-        <!-- Producto 5 -->
         <div class="col-md-3">
           <div class="card card-producto h-100">
             <span class="descuento">-23%</span>
@@ -113,7 +112,6 @@
           </div>
         </div>
 
-        <!-- Producto 6 -->
         <div class="col-md-3">
           <div class="card card-producto h-100">
             <span class="descuento">-13%</span>
@@ -127,7 +125,6 @@
           </div>
         </div>
 
-        <!-- Producto 7 -->
         <div class="col-md-3">
           <div class="card card-producto h-100">
             <span class="descuento">-22%</span>
@@ -141,7 +138,6 @@
           </div>
         </div>
 
-        <!-- Producto 8 -->
         <div class="col-md-3">
           <div class="card card-producto h-100">
             <span class="descuento">-12%</span>
@@ -155,7 +151,6 @@
           </div>
         </div>
 
-        <!-- Producto 9 -->
         <div class="col-md-3">
           <div class="card card-producto h-100">
             <span class="descuento">-7%</span>
@@ -169,7 +164,6 @@
           </div>
         </div>
 
-        <!-- Producto 10 -->
         <div class="col-md-3">
           <div class="card card-producto h-100">
             <span class="descuento">-14%</span>
@@ -183,7 +177,6 @@
           </div>
         </div>
 
-        <!-- Producto 11 -->
         <div class="col-md-3">
           <div class="card card-producto h-100">
             <span class="descuento">-17%</span>
@@ -197,7 +190,6 @@
           </div>
         </div>
 
-        <!-- Producto 12 -->
         <div class="col-md-3">
           <div class="card card-producto h-100">
             <span class="descuento">-11%</span>
@@ -215,7 +207,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="bg-dark text-white py-4 mt-5">
     <div class="container">
       <div class="row">
@@ -244,5 +235,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/sesion.js" defer></script>
 </body>
 </html>

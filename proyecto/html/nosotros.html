@@ -9,13 +9,22 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
   <div class="container">
     <a class="navbar-brand itemNavbarInicio" href="index.html">
       <img src="https://cdn-icons-png.flaticon.com/512/775/775307.png" alt="Logo Tienda DuocFragancias" height="40">
       <span>Inicio</span>
     </a>
+    
+    <a id="link-login" class="navbar-brand" href="login.html">
+        <img src="https://cdn-icons-png.freepik.com/256/30/30422.png" alt="Iniciar sesión" height="40">
+        <span>Iniciar sesión</span>
+    </a>
+    <a id="link-logout" class="navbar-brand" href="#" style="display: none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/126/126467.png" alt="Cerrar Sesión" height="40">
+        <span>Cerrar Sesión</span>
+    </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -30,7 +39,6 @@
   </div>
 </nav>
 
-<!-- CONTENIDO -->
 <main class="container my-5">
   <h1 class="text-purple fw-bold mb-4 text-center">Sobre Nosotros</h1>
 
@@ -64,7 +72,6 @@
   </div>
 </main>
 
-<!-- FOOTER -->
 <footer class="bg-dark text-white py-4 mt-5">
   <div class="container">
     <div class="row">
@@ -93,5 +100,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/sesion.js" defer></script>
 </body>
 </html>
