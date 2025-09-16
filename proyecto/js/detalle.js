@@ -26,27 +26,30 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('tipo').textContent = productoEncontrado.descripcion;
     document.getElementById('precio-internet').textContent = `$${productoEncontrado.precio.toLocaleString('es-CL')}`;
 
-    // --- LÓGICA DEL CARRITO MEJORADA ---
-    const agregarBtn = document.getElementById('agregarCarroBtn');
-    agregarBtn.addEventListener('click', () => {
-        // 1. Obtener el carrito actual de localStorage o crear uno nuevo si no existe.
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    // --- LÓGICA DEL BOTÓN "AGREGAR AL CARRITO" MEJORADA ---
+const agregarBtn = document.getElementById('agregarCarroBtn');
+agregarBtn.addEventListener('click', () => {
+    // Verificamos si hay una sesión activa ANTES de agregar al carrito.
+    const sesionActiva = JSON.parse(localStorage.getItem('sesionActiva'));
 
-        // 2. Revisar si el producto ya está en el carrito.
+    if (sesionActiva) {
+        // --- Si hay sesión, la lógica del carrito funciona normal ---
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         const productoEnCarrito = carrito.find(item => item.codigo == productoEncontrado.codigo);
 
         if (productoEnCarrito) {
-            // Si ya está, incrementamos la cantidad.
             productoEnCarrito.cantidad++;
         } else {
-            // Si es nuevo, lo agregamos con cantidad 1.
             carrito.push({ ...productoEncontrado, cantidad: 1 });
         }
 
-        // 3. Guardar el carrito actualizado de vuelta en localStorage.
         localStorage.setItem('carrito', JSON.stringify(carrito));
-        
-        // 4. Notificar al usuario.
         alert(`"${productoEncontrado.nombre}" ha sido agregado al carrito.`);
-    });
+
+    } else {
+        // --- Si NO hay sesión, redirigimos al login ---
+        alert('Debes iniciar sesión para agregar productos al carrito.');
+        window.location.href = 'login.html';
+    }
+});
 });
