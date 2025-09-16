@@ -1,5 +1,16 @@
 // Espera a que el contenido del HTML se cargue.
 document.addEventListener('DOMContentLoaded', () => {
+    // --- GUARDIÁN DE SESIÓN ---
+    // Verificamos si hay una sesión activa al cargar la página.
+    const sesionActiva = JSON.parse(localStorage.getItem('sesionActiva'));
+
+    if (!sesionActiva) {
+        // Si no hay sesión, mostramos una alerta y redirigimos al login.
+        alert('Debes iniciar sesión para ver tu carrito.');
+        window.location.href = 'login.html';
+        return; // Detenemos la ejecución del resto del script.
+    }
+    // --- FIN DEL GUARDIÁN ---
     // Seleccionamos los elementos clave del HTML del carrito.
     const tbody = document.querySelector('tbody');
     const resumenSubtotal = document.getElementById('resumen-subtotal');

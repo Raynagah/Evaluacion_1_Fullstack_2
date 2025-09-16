@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../css/carrito.css">
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/775/775307.png">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
         <div class="container">
@@ -31,7 +33,8 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
                     <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="carrito.html">Carrito <span id="contador-carrito">(0)</span></a></li>
+                    <li class="nav-item" id="link-carrito" style="display: none;"><a class="nav-link active"
+                            href="carrito.html">Carrito <span id="contador-carrito">(0)</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Ingresar</a></li>
                 </ul>
             </div>
@@ -138,4 +141,5 @@
     <script src="../js/carrito.js" defer></script>
     <script src="../js/sesion.js" defer></script>
 </body>
+
 </html>
