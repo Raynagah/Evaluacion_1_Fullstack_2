@@ -18,7 +18,7 @@ function inicializarProductos() {
                 stock: 15,
                 stockCritico: 5,
                 categoria: 'hombre',
-                imagen: 'data:image/svg+xml;base64,...'
+                imagen: '../img/perfume_azzaro.png'
             },
             {
                 codigo: 'CHN002',
@@ -28,7 +28,7 @@ function inicializarProductos() {
                 stock: 8,
                 stockCritico: 3,
                 categoria: 'mujer',
-                imagen: 'data:image/svg+xml;base64,...' 
+                imagen: '../img/CHPerfumesMujer.webp' 
             }
         ];
         guardarEnLocalStorage(CLAVE_PRODUCTOS, listaProductos);
