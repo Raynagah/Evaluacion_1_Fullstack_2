@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios - Tienda DuocFragancias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/775/775307.png">
+</head>
+
+<body>
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
+        <div class="container">
+            <a class="navbar-brand itemNavbarInicio" href="index.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/775/775307.png" alt="Logo Tienda Duoc Puerto Montt"
+                    height="40">
+                <span>Inicio</span>
+            </a>
+            <a class="navbar-brand" href="indexAdmin.html">
+                <img src="https://cdn-icons-png.freepik.com/256/30/30422.png" alt="Logo Tienda Duoc Puerto Montt"
+                    height="40">
+                <span>Inicio Admin</span>
+            </a>
+            <span class="navbar-text">
+                ¡Bienvenido, Administrador!
+            </span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexAdmin.html">Inicio Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productoAdmin.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="usuarioAdmin.html">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/index.html">Salir</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="text-purple">Gestión de Usuarios</h1>
+            <button class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#modalUsuario">Nuevo Usuario</button>
+        </div>
+
+        <!-- Tabla de usuarios -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-purple">
+                    <tr>
+                        <th>RUT</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo</th>
+                        <th>Tipo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaUsuarios">
+                    <!-- Los usuarios se cargarán dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal para nuevo/editar usuario -->
+    <div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="modalUsuarioLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-purple text-white">
+                    <h5 class="modal-title" id="modalUsuarioLabel">Nuevo Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formUsuario" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="runUsuario" class="form-label">RUT *</label>
+                                <input type="text" class="form-control" id="runUsuario" minlength="7" maxlength="9"
+                                    required>
+                                <div class="invalid-feedback">El RUT es requerido y debe tener entre 7 y 9 caracteres
+                                    (sin puntos ni guion).</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="tipoUsuario" class="form-label">Tipo de Usuario *</label>
+                                <select class="form-select" id="tipoUsuario" required>
+                                    <option value="" selected disabled>Seleccione un tipo</option>
+                                    <option value="administrador">Administrador</option>
+                                    <option value="cliente">Cliente</option>
+                                </select>
+                                <div class="invalid-feedback">Debe seleccionar un tipo de usuario.</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="nombreUsuario" class="form-label">Nombre *</label>
+                                <input type="text" class="form-control" id="nombreUsuario" maxlength="50" required>
+                                <div class="invalid-feedback">El nombre es requerido.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="apellidosUsuario" class="form-label">Apellidos *</label>
+                                <input type="text" class="form-control" id="apellidosUsuario" maxlength="100" required>
+                                <div class="invalid-feedback">Los apellidos son requeridos.</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="correoUsuario" class="form-label">Correo *</label>
+                            <input type="email" class="form-control" id="correoUsuario" maxlength="100" required>
+                            <div class="invalid-feedback">Debe ingresar un correo válido (@duoc.cl, @profesor.duoc.cl o
+                                @gmail.com).</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contrasenaUsuario" class="form-label">Contraseña *</label>
+                            <input type="password" class="form-control" id="contrasenaUsuario" minlength="4"
+                                maxlength="10" required>
+                            <div class="invalid-feedback">La contraseña es requerida y debe tener entre 4 y 10
+                                caracteres.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaNacimientoUsuario" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="fechaNacimientoUsuario">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="regionUsuario" class="form-label">Región *</label>
+                                <select class="form-select" id="regionUsuario" required>
+                                    <option value="" selected disabled>Seleccione una región</option>
+                                    <!-- Las regiones se cargarán dinámicamente -->
+                                </select>
+                                <div class="invalid-feedback">Debe seleccionar una región.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="comunaUsuario" class="form-label">Comuna *</label>
+                                <select class="form-select" id="comunaUsuario" required disabled>
+                                    <option value="" selected disabled>Primero seleccione una región</option>
+                                    <!-- Las comunas se cargarán dinámicamente según la región seleccionada -->
+                                </select>
+                                <div class="invalid-feedback">Debe seleccionar una comuna.</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="direccionUsuario" class="form-label">Dirección *</label>
+                            <textarea class="form-control" id="direccionUsuario" rows="2" maxlength="300"
+                                required></textarea>
+                            <div class="invalid-feedback">La dirección es requerida.</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-purple" id="guardarUsuario">Guardar Usuario</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Tienda DuocFragancias</h5>
+                    <p>La mejor selección de perfumes con entrega a todo Chile.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p>Email: contacto@tiendaduocpm.cl<br>Teléfono: +56 9 1234 5678</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Inicio</a></li>
+                        <li><a href="producto.html" class="text-white">Productos</a></li>
+                        <li><a href="usuario.html" class="text-white">Usuarios</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2025 Tienda DuocFragancias. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/regiones-comunas.js"></script>
+    <script src="../js/scriptsUsuarioAdmin.js"></script>
+    <script src="../js/scripts.js"></script>
+</body>
+
+</html>

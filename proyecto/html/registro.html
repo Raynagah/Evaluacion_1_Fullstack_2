@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda DuocFragancias - Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/registro.css">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/775/775307.png">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
+        <div class="container">
+            <a class="navbar-brand itemNavbarInicio" href="index.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/775/775307.png" alt="Logo Tienda DuocFragancias" height="40">
+                <span>Inicio</span>
+            </a>
+            <a class="navbar-brand" href="login.html">
+                <img src="https://cdn-icons-png.freepik.com/256/30/30422.png" alt="Iniciar sesión" height="40">
+                <span>Iniciar sesión</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tienda.html">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blogs.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="registro.html">Ingresar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="registro-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="card shadow">
+                        <div class="card-header bg-purple text-white text-center py-3">
+                            <h4 class="mb-0">Registro</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <form id="form-registro">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="rut" class="form-label fw-bold">RUT *</label>
+                                        <input type="text" class="form-control" id="rut" placeholder="12345678-9" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="tipoUsuario" class="form-label fw-bold">Tipo de Usuario *</label>
+                                        <select class="form-select" id="tipoUsuario" required>
+                                            <option value="" selected disabled>Seleccione un tipo</option>
+                                            <option value="cliente">Cliente</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="nombre" class="form-label fw-bold">Nombre *</label>
+                                        <input type="text" class="form-control" id="nombre" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="apellidos" class="form-label fw-bold">Apellidos *</label>
+                                        <input type="text" class="form-control" id="apellidos" required>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="correo" class="form-label fw-bold">Correo *</label>
+                                        <input type="email" class="form-control" id="correo" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="confirmarCorreo" class="form-label fw-bold">Confirmar Correo *</label>
+                                        <input type="email" class="form-control" id="confirmarCorreo" required>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="password" class="form-label fw-bold">Contraseña *</label>
+                                        <input type="password" class="form-control" id="password" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="confirmarPassword" class="form-label fw-bold">Confirmar Contraseña *</label>
+                                        <input type="password" class="form-control" id="confirmarPassword" required>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                                        <input type="date" class="form-control" id="fechaNacimiento">
+                                        <small class="text-muted">dd-mm-aaaa</small>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="region" class="form-label fw-bold">Región *</label>
+                                        <select class="form-select" id="region" required>
+                                            <option value="" selected disabled>Seleccione una región</option>
+                                            </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="comuna" class="form-label fw-bold">Comuna *</label>
+                                        <select class="form-select" id="comuna" required disabled>
+                                            <option value="" selected disabled>Primero seleccione una región</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="direccion" class="form-label fw-bold">Dirección *</label>
+                                    <textarea class="form-control" id="direccion" rows="2" required></textarea>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <a href="login.html" class="btn btn-outline-secondary btn-lg">Cancelar</a>
+                                    <button type="submit" class="btn btn-purple btn-lg">Registrarse</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Tienda DuocFragancias</h5>
+                    <p>La mejor selección de perfumes con entrega a todo Chile.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p>Email: contacto@tiendaduocpm.cl<br>Teléfono: +56 9 1234 5678</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Inicio</a></li>
+                        <li><a href="tienda.html" class="text-white">Productos</a></li>
+                        <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                        <li><a href="nosotros.html" class="text-white">Nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2025 Tienda DuocFragancias. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/regiones-comunas.js"></script>
+    <script src="../js/registro.js"></script>
+
+</body>
+</html>
